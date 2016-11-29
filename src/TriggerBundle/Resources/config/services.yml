@@ -1,0 +1,11 @@
+# src/TriggerBundle/Resources/config/services.yml
+services:
+
+    thing.listener:
+        class: TriggerBundle\EventListener\ThingListener
+        arguments:
+            templating: "@twig"
+            mailer: "@mailer"
+            container: "@service_container"
+        tags:
+            - { name: kernel.event_listener, event: thing.event, method: onThingAction }

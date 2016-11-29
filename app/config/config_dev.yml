@@ -1,0 +1,42 @@
+# app/config/config_dev.yml
+imports:
+    - { resource: config.yml }
+
+parameters:
+    cots.trigger_bundle.notice_to_email: your_email_here
+    cots.trigger_bundle.notice_from_email: your_email_here
+
+framework:
+    router:
+        resource: "%kernel.root_dir%/config/routing_dev.yml"
+        strict_requirements: true
+    profiler: { only_exceptions: false }
+
+web_profiler:
+    toolbar: true
+    intercept_redirects: false
+
+monolog:
+    handlers:
+        main:
+            type: stream
+            path: "%kernel.logs_dir%/%kernel.environment%.log"
+            level: debug
+            channels: [!event]
+        console:
+            type:   console
+            channels: [!event, !doctrine]
+        # uncomment to get logging in your browser
+        # you may have to allow bigger header sizes in your Web server configuration
+        #firephp:
+        #    type:   firephp
+        #    level:  info
+        #chromephp:
+        #    type:   chromephp
+        #    level:  info
+
+swiftmailer:
+#    delivery_address: me@example.com
+    transport: gmail
+    username:  your_gmail_username
+    password:  your_gmail_password
