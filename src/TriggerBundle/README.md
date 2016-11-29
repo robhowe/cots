@@ -1,6 +1,6 @@
-## CoTs
+# CoTs
 
-A Symfony2 project created by Rob Howe <rob@robhowe.com> in response to a Code Challenge.
+**Counts of Things** - A Symfony2 project created by Rob Howe <rob@robhowe.com> in response to a Code Challenge.
 
 ## Requirements:
 
@@ -20,11 +20,11 @@ So a simple flow of the app would be:
     Set banana tracker to <current> - 3
     Send an email that "bananas" reached 0
 
-====
+*****
 
 Note - This is a programming exercise, not an enterprise-level production-ready application.  There is no security or unit tests, and little input validation or documentation included.
 
-====
+*****
 
 ## Installation:
 
@@ -32,16 +32,23 @@ Although the two bundles included are loosely coupled and able to be deployed se
 
 This is a simple Symfony2 project.
 To get started, update the usual files with your env's settings:
-  app/config/config.yml
-  app/config/config_dev.yml
-  app/config/parameters.yml
+~~~~
+app/config/config.yml
+app/config/config_dev.yml
+app/config/parameters.yml
+~~~~
 
 To create the database needed, run commands:
-  php bin/console doctrine:database:drop --force
-  php bin/console doctrine:database:create
-  php bin/console doctrine:schema:update --force
+~~~~
+php bin/console doctrine:database:drop --force
+php bin/console doctrine:database:create
+php bin/console doctrine:schema:update --force
+~~~~
+
 If needed, start a Symfony webserver:
-  php bin/console server:run
+~~~~
+php bin/console server:run
+~~~~
 
 ## License
 
