@@ -1,9 +1,9 @@
 ## CoTs
-====
 
 A Symfony2 project created by Rob Howe <rob@robhowe.com> in response to a Code Challenge.
 
 ## Requirements:
+
 Using Symfony2, create a simple web app. The goal is to create a rudimentary data pipeline with execution triggers.
 
 PipelineBundle: We want to track "counts" of "things." For example, I may GET/POST to http://your-app/tracker/bananas/3/up. This would increment the "banana counter" by "3" in the "up" direction. These "things" can be created dynamically simply by attempting to access them. For instance, if "banana" didn't exist, it would be created and tracked starting at 0.
@@ -19,6 +19,10 @@ So a simple flow of the app would be:
     POST/GET /tracker/bananas/3/down
     Set banana tracker to <current> - 3
     Send an email that "bananas" reached 0
+
+====
+
+Note - This is a programming exercise, not an enterprise-level production-ready application.  There is no security or unit tests, and little input validation or documentation included.
 
 ====
 
